@@ -3,13 +3,19 @@
 # Step 0: Bring in the necessary python and xsuite libraries for the simulation.
 ###################################################################################
 
-import numpy as np
-import xobjects as xo
-import xtrack as xt
+import numpy as np			## numerical computing library for Python.
+import xobjects as xo		## memory management and compile/execute code.
+import xpart as xp			## generate and manipulate particle ensembles.
+import xtrack as xt			## create/import lattices, 1-particle tracking.
+import xfields as xf		## compute EMfields with PIC/analytical dists.
+import xdeps as xd			## part-matter sims and interface FLUKA/Geant4.
+
+## Link to Xsuite   : https://xsuite.readthedocs.io/en/latest/index.html
+## Link to Numpy    : https://numpy.org/
 
 ###################################################################################
 ## Lattice description ##
-# Step 1: Define a lattice/line within Xsuite or import the lattice from MAD-X.
+# Step 1: Define a lattice within Xsuite or import the lattice from MAD-X.
 # Lattice elements can be manipulated later in the code 'line['quad_0'].knl[1] = 2'
 ###################################################################################
 
