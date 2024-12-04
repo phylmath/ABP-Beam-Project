@@ -3,7 +3,18 @@
 # Step 0: Bring in the necessary python and xsuite libraries for the simulation.
 ###################################################################################
 
-import numpy as np			## numerical computing library for Python.
+## Check if NumPy version
+## pip install --force-reinstall numpy==1.24.0  
+## python -c "import numpy; print(numpy.__version__)"
+## pip install --force-reinstall matplotlib==3.1.0
+## python -c "import matplotlib; print('matplotlib: {}'.format(matplotlib.__version__))"
+
+## Python
+import numpy as np			## numerical computing library.
+import matplotlib as mp		## static/animated visualisations.
+# from matplotlib import pyplot as plt
+import pandas as pd         ## data analysis and manipulation.
+## Xsuite
 import xobjects as xo		## memory management and compile/execute code.
 import xpart as xp			## generate and manipulate particle ensembles.
 import xtrack as xt			## create/import lattices, 1-particle tracking.
@@ -92,6 +103,9 @@ line.track(particles, num_turns=n_turns,
 ## Turn-by-turn data is available at:
 line.record_last_track.x
 line.record_last_track.px
+
+my_twiss = line.twiss4d()
+my_twiss.plot()
 
 ###################################################################################
 ###################################################################################
